@@ -1,5 +1,6 @@
 import * as PIXI from 'pixi.js-legacy';
-import { exportPdf, renderSkiaPreview } from './api';
+import { exportPdf } from './api';
+import { renderCanvasKitPreview } from './canvaskit-renderer';
 import { hitTestScene } from './hit-test';
 import {
   appendGraphicsNode,
@@ -109,8 +110,8 @@ const redrawSkia = async (): Promise<void> => {
     sourceScene.background
   );
 
-  setBusy('Рендер Skia...', true);
-  await renderSkiaPreview(currentSkiaScene, skiaCanvas);
+  setBusy('Рендер Skia WASM...', true);
+  await renderCanvasKitPreview(currentSkiaScene, skiaCanvas);
   setBusy('Готово', false);
 };
 

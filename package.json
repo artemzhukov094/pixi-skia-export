@@ -9,6 +9,7 @@
     "serve": "tsx src/server/server.ts"
   },
   "dependencies": {
+    "canvaskit-wasm": "^0.41.1",
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "pixi.js-legacy": "7.2.4",
